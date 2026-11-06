@@ -65,6 +65,7 @@ Scheduling:
 ## 5. Questions
 1. Scheduling Partners:
 - Do they need a secure login to schedule appointments for clients?
+- Do they have permission to cancel appointment on behalf of a users request?
 
 2. Site Coordinators:
 - Type of security required for this assignment in regard to Site Coordinator Authorization?
