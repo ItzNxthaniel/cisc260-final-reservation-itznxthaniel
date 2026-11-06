@@ -63,4 +63,8 @@ Scheduling:
 - Binghamton (Fridays in oper. Season before Apr. 15, excluding Norwich & Utica Dates): 10-11am, 11am-12pm, 1-2pm, 2-3pm (Capacity: 32 each time-block).
 
 ## 5. Questions
-None at this time.
+1. Scheduling Partners:
+- Do they need a secure login to schedule appointments for clients?
+
+2. Site Coordinators:
+- Type of security required for this assignment in regard to Site Coordinator Authorization?
