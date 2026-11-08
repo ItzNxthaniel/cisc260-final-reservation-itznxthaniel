@@ -2,7 +2,7 @@
 skinparam ConditionEndStyle hline
 title "[Activity] Screen Client"
 
-|<center>Client\nor\nSched. Part.|
+|Client or\nSched. Part.|
 start
 :<b>Client Input Steps:</b>
 * Enter Income
@@ -64,7 +64,7 @@ endif
 
 :Send Eligiblity Status;
 
-|<center>Client\nor\nSched. Part.|
+|Client or\nSched. Part.|
 if (Approved) then (Yes)
     :Allow continue to\nscheduling appointment.;
 else (No)
