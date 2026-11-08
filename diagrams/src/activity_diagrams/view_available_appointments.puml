@@ -1,2 +1,3 @@
 @startuml "[Activity] VITA Reserve - View Available Appointments"
+title "View Available Appointment"
 @enduml

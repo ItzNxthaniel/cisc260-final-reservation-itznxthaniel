@@ -1,2 +1,3 @@
 @startuml "[Activity] VITA Reserve - Manage Capacity"
+title "Manage Capacity"
 @enduml
