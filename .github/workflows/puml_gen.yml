@@ -8,6 +8,8 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -16,7 +18,7 @@ jobs:
         uses: rotaract/plantuml-action@v1.3.0
         with:
           format: png
-          pattern: "diagrams/src/**.puml"
+          pattern: "diagrams/src/**/**.puml"
 
       - name: "Move generated PNGs to out directory."
         run: | 
@@ -24,8 +26,14 @@ jobs:
           cd diagrams/src
           find . -name "*.png" -exec cp --parents {} ../out/ \;
 
-      - name: Upload Diagrams
-        uses: actions/upload-artifact@v4
-        with:
-          name: diagrams
-          path: "diagrams/out/**.png"
+          find . -name "*png" -delete
+
+      - name: Commit and Push to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add diagrams/out/
+
+          git diff --staged --quiet || git commit -m "chore: auto-generate PlantUML diagrams"
+          git push
