@@ -1,3 +1,3 @@
 @startuml "[Activity] VITA Reserve - Export Scheduled Appointments"
-title "Export Scheduled Appointments"
+title "[Activity] Export Scheduled Appointments"
 @enduml
