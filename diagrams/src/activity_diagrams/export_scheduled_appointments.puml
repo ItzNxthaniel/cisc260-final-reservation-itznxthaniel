@@ -14,7 +14,44 @@ query
 date=12741201
 end note
 
+|System|
+:Get appointments that land on the given day.;
+
+if (Is there any appointments) then (No)
+    |Site Coordinator|
+    :Alert user no\nappointments.;
+    stop
+else (Yes)
+endif
 
 |System|
+partition "Compile list of appointments" {
+    floating note right
+        <font:monospaced>
+        appointments = [
+            {
+                "date_time": 
+                    21321312,
+                "full_name": 
+                    "Jane Doe",
+                "phone_number": 
+                    "1234567890",
+                "zip_code":
+                    12345
+            }
+        ]
+    end note
+
+    while (db_appointments) is (not empty)
+        :Add to appointments;
+    endwhile (empty)
+}
+
+:Return list of appointments;
+
+|Site Coordinator|
+:Retrive list of appointments;
+:Display list of appointments;
+:Open print dialog to\nprint appointment list;
 end
 @enduml
