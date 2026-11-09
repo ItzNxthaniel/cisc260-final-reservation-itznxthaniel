@@ -24,7 +24,7 @@ jobs:
           mkdir -p diagrams/out
           cd diagrams/src
 
-          find . -name "*.png" | whild read -r file; do
+          find . -name "*.png" | while read -r file; do
             mkdir -p "../out/$(dirname "$file")"
             mv "$file" "../out/$file"
           done
