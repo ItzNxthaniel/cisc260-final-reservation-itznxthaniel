@@ -1,3 +1,66 @@
 @startuml "[Activity] VITA Reserve - Cancel Appointment"
+skinparam ConditionEndStyle hline
 title "[Activity] Cancel Appointment"
+
+|Client or\nSched. Part.|
+start
+:<b>Client Input Steps</b>
+* Full Name
+* Phone Number
+* ZipCode;
+:Submits for retrieval.;
+note right
+    **JSON Payload**
+    <font:monospaced>
+    {
+        "full_name":
+            "Jane Doe",
+        "phone_number": 
+            "1234567890",
+        "zip_code": 
+            "12345"
+    }
+end note
+
+|System|
+:Find appointment by\nprovided details.;
+if (Appointment exists\nunder received details) then (No) 
+    |Client or\nSched. Part.|
+    :Alert user no\nappointment was found.;
+    stop
+else (Yes)
+endif
+
+|System|
+if (Is Appointment upcoming?) then (No)
+    |Client or\nSched. Part.|
+    :Alert user no\nupcoming appointment.;
+    stop
+else (Yes)
+endif
+
+|Client or\nSched. Part.|
+:Alert user upcoming appointment was found.;
+:Ask user to confirm deletion.;
+
+|System|
+if (User confirms Deletion) then (No)
+    |Client or\nSched. Part.|
+    :Alert user no\naction taken.;
+    stop
+else (Yes)
+endif
+|System|
+:Process cancellation.;
+:Return result;
+
+|Client or\nSched. Part.|
+if (Cancellation Result) then (Success)
+    :Alert user cancellation\nwas successful.;
+else (Unsuccessful)
+    :Alert user cancellation\nwas unsuccessful.;
+endif
+
+end
+footer Sched. Part. = Scheduling Partner
 @enduml
