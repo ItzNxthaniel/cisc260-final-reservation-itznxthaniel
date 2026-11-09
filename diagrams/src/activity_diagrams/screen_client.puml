@@ -19,7 +19,7 @@ note right
         "non-english": "en"
     }
 end note
-:Submit for automatic review;
+:Submit for automatic review.;
 
 |System|
 floating note right
@@ -67,6 +67,8 @@ endif
 |Client or\nSched. Part.|
 if (Approved) then (Yes)
     :Allow continue to\nscheduling appointment.;
+
+    :Save entered data\nin cookies for later.;
 else (No)
     :Alert client/sched. part. that\nthe client is not approved.;
 endif
