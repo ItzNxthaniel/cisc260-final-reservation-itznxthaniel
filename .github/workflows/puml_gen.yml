@@ -4,7 +4,6 @@ on:
   push:
     branches: ["main"]
 
-
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -18,7 +17,7 @@ jobs:
         uses: rotaract/plantuml-action@v1.3.0
         with:
           format: png
-          pattern: "diagrams/src/**/*.puml"
+          pattern: "diagrams/src/**.puml"
 
       - name: "Move generated PNGs to out directory."
         run: | 
