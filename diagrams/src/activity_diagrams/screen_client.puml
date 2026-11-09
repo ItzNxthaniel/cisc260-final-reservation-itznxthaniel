@@ -10,8 +10,10 @@ start
 * Diclose Disability
 * Choose Language;
 note right
-    **JSON Payload**
+    **API Request**
+    GET /screening
     <font:monospaced>
+    body
     {
         "income": 12000,
         "age": 45,
@@ -22,45 +24,48 @@ end note
 :Submit for automatic review.;
 
 |System|
-floating note right
-    **Built hashmap on backend**
-    <font:monospaced>
-    criteria = {
-        "income": false,
-        "age": false,
-        "disability": false,
-        "non-english": false
-    }
-end note
-if (Income < x) then (Yes)
-    :Set income to True;
-else (No)
-    :Set income to False;
-endif
+:Read REST Body.;
+partition "processData" {
+    floating note right
+        **Built hashmap on backend**
+        <font:monospaced>
+        criteria = {
+            "income": false,
+            "age": false,
+            "disability": false,
+            "non-english": false
+        }
+    end note
+    if (Income < x) then (Yes)
+        :Set income to True;
+    else (No)
+        :Set income to False;
+    endif
 
-if (Age >= x) then (Yes)
-    :Set age to True;
-else (No)
-    :Set age to False;
-endif
+    if (Age >= x) then (Yes)
+        :Set age to True;
+    else (No)
+        :Set age to False;
+    endif
 
-if (Disability Disclosed) then (Yes)
-    :Set disability to True;
-else (No)
-    :Set disability to False;
-endif
+    if (Disability Disclosed) then (Yes)
+        :Set disability to True;
+    else (No)
+        :Set disability to False;
+    endif
 
-if (Language not English) then (Yes)
-    :Set Non-English to True;
-else (No)
-    :Set Non-English to False;
-endif
+    if (Language not English) then (Yes)
+        :Set Non-English to True;
+    else (No)
+        :Set Non-English to False;
+    endif
 
-if (Is any Critera set to True) then (Yes)
-    :Prepare Approval;
-else (No)
-    :Prepare Deny;
-endif
+    if (Is any Critera set to True) then (Yes)
+        :Prepare Approval;
+    else (No)
+        :Prepare Deny;
+    endif
+}
 
 :Send Eligiblity Status;
 

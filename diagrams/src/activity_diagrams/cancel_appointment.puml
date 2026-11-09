@@ -10,8 +10,10 @@ start
 * ZipCode;
 :Submits for retrieval.;
 note right
-    **JSON Payload**
+    **API Request**
+    GET /appointment
     <font:monospaced>
+    body
     {
         "full_name":
             "Jane Doe",
