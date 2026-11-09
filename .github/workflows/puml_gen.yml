@@ -3,7 +3,7 @@ name: Generate PlantUML Diagrams
 on:
   push:
     branches: ["main"]
-    paths: ["**.puml"]
+
 
 jobs:
   render:
@@ -18,7 +18,7 @@ jobs:
         uses: rotaract/plantuml-action@v1.3.0
         with:
           format: png
-          pattern: "diagrams/src/**/**.puml"
+          pattern: "diagrams/src/**/*.puml"
 
       - name: "Move generated PNGs to out directory."
         run: | 
