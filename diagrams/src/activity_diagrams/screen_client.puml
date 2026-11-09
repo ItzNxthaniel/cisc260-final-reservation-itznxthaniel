@@ -1,4 +1,4 @@
-@startuml "[Activity] VITA Reserve - Screen Client"
+@startuml "activity_screen_client"
 skinparam ConditionEndStyle hline
 title "[Activity] Screen Client"
 

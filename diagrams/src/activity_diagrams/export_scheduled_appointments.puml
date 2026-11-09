@@ -1,3 +1,20 @@
-@startuml "[Activity] VITA Reserve - Export Scheduled Appointments"
+@startuml "activity_export_appointments"
+skinparam ConditionEndStyle hline
 title "[Activity] Export Scheduled Appointments"
+|Site Coordinator|
+start
+:<b>Site Coordinator Inputs:</b>
+* Desired Day;
+:Requests appointments for that day.;
+note right
+**API Request**
+GET /appointment
+<font:monospaced>
+query
+date=12741201
+end note
+
+
+|System|
+end
 @enduml

@@ -24,10 +24,8 @@ jobs:
           mkdir -p diagrams/out
           cd diagrams/src
 
-          find . -name "*.png" | while read -r file; do
-            mkdir -p "../out/$(dirname "$file")"
-            mv "$file" "../out/$file"
-          done
+          find . -name "*.png" -exec cp --parents {} ../out/ \;
+          find . -name "*png" -delete 
 
       - name: Commit and Push to Repository
         run: |

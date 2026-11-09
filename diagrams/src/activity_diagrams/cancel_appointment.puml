@@ -1,4 +1,4 @@
-@startuml "[Activity] VITA Reserve - Cancel Appointment"
+@startuml "activity_cancel_appointment"
 skinparam ConditionEndStyle hline
 title "[Activity] Cancel Appointment"
 

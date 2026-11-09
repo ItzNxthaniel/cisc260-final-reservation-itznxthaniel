@@ -1,4 +1,4 @@
-@startuml "VITA Reserve - Use Cases"
+@startuml "vita-reserve_use-cases"
 title "VITA Reserve - Use Cases"
 left to right direction
 actor "Client" as ct
