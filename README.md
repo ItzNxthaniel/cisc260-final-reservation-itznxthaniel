@@ -32,7 +32,7 @@ The VITA Program needs a new system to follow one reservation procedure, which a
 | BR-04 | Clients can cancel their appointments 24 or more hours out from it.
 | BR-05 | Only Site Cordinators can view the appointments.
 | BR-06 | Eligiblity for VITA:<br>• Salary $82,000 or Less.<br>• Persons with Disabilities.<br>• Limited English-speaking taxpayers.<br>• 60 Years of Age or Older. |
-| BR-07 | Scheduling:<br>• Hartwick (Mon. & Tues.): 6-7pm, 7-8pm (Capacity: 16<br>• Local Library service (Sat.): 10-11am, 11am-12pm, 1-2pm, 2-3pm (Capacity: 32 each time-block)<br>• Norwich (Fridays in Feb.): 10-11am, 11am-12pm, 1-2pm, 2-3pm (Capacity: 32 each time-block)<br>• Utica (First Friday in April): 10-11am, 11am-12pm, 1-2pm, 2-3pm (Capacity: 32 each time-block).<br>• Binghamton (Fridays in oper. Season before Apr. 15, excluding Norwich & Utica Dates): 10-11am, 11am-12pm, 1-2pm, 2-3pm (Capacity: 32 each time-block). |
+| BR-07 | ALL HOUR BLOCKS HAVE A DEFAULT CAPACITY OF 8.<br>Scheduling:<br>• Hartwick (Mon. & Tues.): 6-7pm, 7-8pm<br>• Local Library service (Sat.): 10-11am, 11am-12pm, 1-2pm, 2-3pm<br>• Norwich (Fridays in Feb.): 10-11am, 11am-12pm, 1-2pm, 2-3pm<br>• Utica (First Friday in April): 10-11am, 11am-12pm, 1-2pm, 2-3pm.<br>• Binghamton (Fridays in oper. Season before Apr. 15, excluding Norwich & Utica Dates): 10-11am, 11am-12pm, 1-2pm, 2-3pm. |
 
 ## 5. Questions
 1. Scheduling Partners:
