@@ -1,0 +1,9 @@
+@startuml
+title "VITA Reserve - ERD"
+
+Client ||--|{ Appointment
+Appointment ||--|| TimeBlock
+TimeBlock }|--|| Location
+Location ||--o{ Exception
+
+@enduml
