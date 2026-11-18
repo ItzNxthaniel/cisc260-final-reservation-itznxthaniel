@@ -1,6 +1,5 @@
 @startuml
 title "System View: VITA Reserve System"
-!NEW_C4_STYLE=1
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
