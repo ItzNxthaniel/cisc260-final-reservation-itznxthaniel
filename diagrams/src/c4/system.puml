@@ -1,0 +1,19 @@
+@startuml
+title "System View: VITA Reserve System"
+!NEW_C4_STYLE=1
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+SHOW_PERSON_OUTLINE()
+
+Person(client, Client, "Completes screening, viewing, and scheduling appointments.", "person")
+Person(scheduling_partner, "Scheduling Partner", "Assists clients in screening, viewing, and scheduling.", "person")
+Person(site_coordinator, "Site Coordinator", "Manages timeblocks, view scheduled appointments, and cancel appointments.", "person")
+
+System(vita_reserve_system, "VITA Reservation System", "System allowing clients & scheduling partners to view screen, view, and scheduling. Also allowing Site Coordinators to manage time blocks, view scheduled appointments, and cancel.")
+
+Rel(client, vita_reserve_system, "Screening, Viewing, or Scheduling.")
+Rel_R(scheduling_partner, vita_reserve_system, "Screening, Viewing, or Scheduling.")
+Rel_L(site_coordinator, vita_reserve_system, "Manage Timeblocks, Viewing or Cancelling Appointments.")
+
+SHOW_LEGEND()
+@enduml
