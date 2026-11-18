@@ -3,7 +3,7 @@ name: Generate PlantUML Diagrams
 on:
   push:
     branches: ["main"]
-    paths: ["**.puml"]
+    # paths: ["**.puml"]
 
 jobs:
   render:
@@ -14,13 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: PlantUML GitHub Action
-        uses: rotaract/plantuml-action@v1.3.0
-        with:
-          format: png
-          pattern: "diagrams/src/**.puml"
+      - name: Install Graphviz and Fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz fonts-liberation
 
-      - name: "Move generated PNGs to out directory."
+      - name: Download Latest PlantUML
+        run: curl -L -o plantuml.jar https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
+
+      - name: Render Diagrams
+        run: java -jar plantuml.jar -tpng "diagrams/src/**.puml"
+
+      - name: Move generated PNGs to diagrams/out
         run: | 
           mkdir -p diagrams/out
           cd diagrams/src
