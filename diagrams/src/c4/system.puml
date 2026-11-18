@@ -1,7 +1,8 @@
 @startuml
 title "System View: VITA Reserve System"
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!$NEW_C4_STYLE=1
+!include <C4/C4_Context>
 
 Person(client, Client, "Completes screening, viewing, and scheduling appointments.")
 Person(scheduling_partner, "Scheduling Partner", "Assists clients in screening, viewing, and scheduling.")
