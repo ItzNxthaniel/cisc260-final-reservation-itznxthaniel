@@ -3,16 +3,15 @@ title "Container View: VITA Reserve System"
 !NEW_C4_STYLE=1
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-SHOW_PERSON_OUTLINE()
 
-Person(client, Client, "Completes screening, viewing, and scheduling appointments.", "person")
-Person(scheduling_partner, "Scheduling Partner", "Assists clients in screening, viewing, and scheduling.", "person")
-Person(site_coordinator, "Site Coordinator", "Manages timeblocks, view scheduled appointments, and cancel appointments.", "person")
+Person(client, Client, "Completes screening, viewing, and scheduling appointments.")
+Person(scheduling_partner, "Scheduling Partner", "Assists clients in screening, viewing, and scheduling.")
+Person(site_coordinator, "Site Coordinator", "Manages timeblocks, view scheduled appointments, and cancel appointments.")
 
 System_Boundary(vita_reserve_system, "VITA Reservation System") {
     Container(ui, UI, "React JS", "Frontend application that all users will use. Site coordinator uses a secondary page that has secure access attached.")
     Container(api, API, "Axum Rust", "Backend API (Application Programming Interface) that the frontend will use to make changes to the database.")
-    ContainerDb(db, Database, "SQLite", "Database for the system, storing scheduled client information, appointments, recurring timeblocks, exceptions, etc.")
+    ContainerDb(db, "System Database", "SQLite", "Database for the system, storing scheduled client information, appointments, recurring timeblocks, exceptions, etc.")
 }
 
 System_Ext(oauth_login, "OAuth Login Provider", "Secure login authentication for Site Coordinators.")
