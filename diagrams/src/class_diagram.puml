@@ -1,0 +1,71 @@
+@startuml
+title "Class Diagram: VITA Reserve System"
+
+class Client {
+    - first_name: String
+    - last_name: String
+    - phone_number: String
+    - zip_code: String
+
+    + Client(): Client
+    + get_first_name(): String
+    + get_last_name(): String
+    + get_name(): String
+    + get_phone_number(): String
+    + get_zip_code(): String
+    + matches_household(): Boolean
+}
+
+class Household {
+    - last_name: String
+    - phone_number: String
+    - zip_code: String
+
+    + Household(): Household
+}
+
+class Appointment {
+    - id: UUID
+    - tax_year: Integer
+    - status: StatusEnum
+    - household: Household
+    
+    + Appointment(): Appointment
+    + get_id(): UUID
+    + get_tax_year(): Integer
+    + is_upcoming(): Boolean
+    + get_household(): Household
+}
+
+enum StatusEnum {
+    CANCELLED
+    UPCOMING
+}
+
+class TimeBlock {
+    - start_time: Time
+    - end_time: Time
+    - day_of_week: DayEnum
+
+    + TimeBlock(): TimeBlock
+    + get_start_time(): Time
+    + get_end_time(): Time
+    + get_day_of_week(): DayEnum
+}
+
+enum DayEnum {
+    SUNDAY
+    MONDAY
+    TUESDAY
+    WEDNESDAY
+    THURSDAY
+    FRIDAY
+    SATURDAY
+}
+note right {
+    Will be used as a 
+    bitwise flag for coorelating 
+    multiple days it reoccurs.
+}
+
+@enduml
