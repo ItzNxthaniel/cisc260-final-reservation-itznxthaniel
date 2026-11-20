@@ -2,6 +2,7 @@
 title "Class Diagram: VITA Reserve System"
 
 class Client {
+    - id: UUID
     - first_name: String
     - last_name: String
     - phone_number: String
@@ -41,6 +42,11 @@ enum StatusEnum {
     CANCELLED
     UPCOMING
 }
+note left {
+    Used to determine if an 
+    appointmnet has been cancelled 
+    or not.
+}
 
 class TimeBlock {
     - start_time: Time
@@ -62,10 +68,51 @@ enum DayEnum {
     FRIDAY
     SATURDAY
 }
-note right {
+note left {
     Will be used as a 
     bitwise flag for coorelating 
     multiple days it reoccurs.
 }
+
+class Location {
+    - id: UUID
+    - name: String
+    - capacity: Integer
+
+    + Location(): Location
+    + get_id(): UUID
+    + get_name(): String
+    + get_capacity(): Integer
+}
+
+class Exception {
+    - id: UUID
+    - day: Date
+    - start_time: Time
+    - end_time: Time
+    - is_closed: Boolean
+    - capacity: Integer
+}
+
+class AppointmentHandler {}
+class AvailabilityHandler {}
+class ScreenHandler {}
+class LocationHandler {}
+
+Appointment -left-- StatusEnum
+TimeBlock -left-- DayEnum
+
+Client ||--|| Household
+Household ||--|{ Appointment
+Appointment ||--|| Location
+Location ||--o{ TimeBlock
+Location ||--o{ Exception
+
+Client }o-right-|| ScreenHandler
+Appointment }o-right-|| AppointmentHandler
+Location }o-right-|| LocationHandler
+Location }o-right-|| AvailabilityHandler
+
+
 
 @enduml
