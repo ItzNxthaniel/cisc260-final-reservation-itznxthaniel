@@ -106,7 +106,7 @@ Client ||--|| Household
 Household ||--|{ Appointment
 Appointment ||--|| Location
 Location ||--o{ TimeBlock
-Location ||--o{ Exception
+Location ||-left-o{ Exception
 
 Client }o-right-|| ScreenHandler
 Appointment }o-right-|| AppointmentHandler
